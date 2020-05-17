@@ -1,0 +1,21 @@
+1. something.java -> compile -> something.class[intermediate code] -> JVM(java virtual machine) -> output
+
+program.java -> compile[different then jvm] -> program.class [bytecode]
+program.class -> JVM -> output
+
+Class Test{
+    static void A(){}
+    void B(){}
+}
+
+Test.A()
+Test t = new Test()
+t.B()
+
+Test.main()
+
+
+
+
+
+
