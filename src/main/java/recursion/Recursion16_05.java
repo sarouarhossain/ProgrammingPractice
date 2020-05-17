@@ -2,13 +2,18 @@ package recursion;
 
 public class Recursion16_05 {
   String x = "Text";
+  public static Long count = 0l;
 
   public static void main(String[] args) {
     Recursion16_05 recur = new Recursion16_05();
-    recur.funcRecur(5);
+    recur.funcRecur(100000000000l);
   }
 
-  void funcRecur(int n) {
+  // time complexity O(n)
+  // space complexity O(n)
+  void funcRecur(Long n) {
+    //    count++;
+    //    System.out.println(count);
     if (n == 0) {
       return;
     } else {
@@ -17,11 +22,22 @@ public class Recursion16_05 {
     }
   }
 
+  // time complexity O(n)
+  // space complexity O(1)
   void funcLoop(int n) {
+    // String[] x = {"AA", "V"};
     int i;
-    for (i = n; i >= 0; i--) {
+
+    for (i = 0; i <= n; i++) {
       System.out.println(i); // 5 4 3 2 1 0
     }
+
+    // 3, n*3 + 1 , 1000*3 +1 = 3001 = O(n)
+    // O(1)
+
+    //    for (i = n; i >= 0; i--) {
+    //      System.out.println(i); // 5 4 3 2 1 0
+    //    }
   }
 
   void funcWhileLoop(int n) {
