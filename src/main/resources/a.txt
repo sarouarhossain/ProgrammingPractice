@@ -1,0 +1,56 @@
+A = 3;
+B = 5;
+
+temp = A = 3;
+
+A = B; // A = 5, B = 5
+B = temp;
+
+
+
+i = 6;
+j = 7;
+
+temp = i;
+
+i = j
+j = temp
+
+// without temporary
+
+x = 10;
+y = 5;
+
+x = x + y = 15;
+y = x - y = 15 -5 = 10;
+x = x - y = 15 - 10 = 5;
+
+a = 10;
+b = 5;
+
+a = a*b = 50;
+b = a/b = 50/5 = 10;
+a = a/b = 50/10 = 5
+
+
+
+T = jack
+R = robin
+
+temp = T = jack
+T = R = robin
+R = temp = jack
+
+
+
+
+f(n) = 2f(n-1) -> 2^n
+
+// n*n*n
+for( n ){
+    for ( n) {
+        for(n){
+
+        }
+    }
+}
