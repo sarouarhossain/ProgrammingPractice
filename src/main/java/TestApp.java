@@ -1,12 +1,12 @@
 public class TestApp {
   public static void main(String[] args){
+    int n = 5;
+    printC(n);
+  }
 
-    //System.out.println("Hello");
-
-    int x = 5;
-    do{
-      System.out.println(x);
-      x--;
-    }while (x>0);
+  static void printC(int n){
+    if(n == 0) return;
+    printC(n-1);
+    System.out.println(n);
   }
 }
