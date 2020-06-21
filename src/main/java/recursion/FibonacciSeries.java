@@ -13,9 +13,9 @@ public class FibonacciSeries {
     //
     FibonacciSeries fibonacciSeries = new FibonacciSeries();
     Arrays.fill(fibonacciSeries.A, -1);
-    Integer n = 1000000;
+    Integer n = 1000;
     LocalDateTime x = LocalDateTime.now();
-    System.out.println("Sum: " + fibonacciSeries.fibIterative(n));
+    System.out.println("Sum: " + fibonacciSeries.fibRecBetterWay(n));
     LocalDateTime y = LocalDateTime.now();
     System.out.println(x);
     System.out.println(y);
