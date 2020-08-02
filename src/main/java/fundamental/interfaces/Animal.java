@@ -1,5 +1,5 @@
 package fundamental.interfaces;
 
-public interface Animal {
+interface Animal {
   void sound();
 }

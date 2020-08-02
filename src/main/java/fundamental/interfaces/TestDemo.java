@@ -13,5 +13,7 @@ public class TestDemo {
 
     Dog dog1 = new Dog();
     dog1.test1();
+
+    System.out.println();
   }
 }
