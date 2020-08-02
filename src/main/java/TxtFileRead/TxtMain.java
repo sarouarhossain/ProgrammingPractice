@@ -8,7 +8,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TxtMain {
   public static void main(String[] args) {
@@ -17,6 +19,13 @@ public class TxtMain {
             "C:\\Users\\sarou\\Desktop\\ProgrammingPractice\\ProgrammingPractice\\src\\main\\resources\\data.txt");
     Charset charset = StandardCharsets.UTF_8;
 
+    Map<String, Double> resultMap = getDebitCreditAmount(path, charset);
+
+    System.out.println(
+        "DebitAmount: " + resultMap.get("debit") + "   CreditAmount: " + resultMap.get("credit"));
+  }
+
+  public static Map<String, Double> getDebitCreditAmount(Path path, Charset charset) {
     List<Account> accountList = new ArrayList<>();
 
     try {
@@ -63,7 +72,10 @@ public class TxtMain {
       }
     }
 
-    System.out.println("DebitAmount: " + debitAmount + "   CreditAmount: " + creditAmount);
+    Map<String, Double> map = new HashMap<>();
+    map.put("credit", creditAmount);
+    map.put("debit", debitAmount);
+    return map;
   }
 
   public static Double convertLineToAmountData(String line) {
