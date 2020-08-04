@@ -42,10 +42,20 @@ public class TxtMain {
             "C:\\Users\\sarou\\Desktop\\ProgrammingPractice\\ProgrammingPractice\\src\\main\\resources\\testdata.xlsx");
 
     XSSFWorkbook workbook = new XSSFWorkbook(file);
-    XSSFSheet sheet = workbook.getSheet("0803");
+
+    Date date = new Date();
+    int month = date.getMonth() + 1;
+    int dateNum = date.getDate();
+
+    String monthString = month < 10 ? "0" + month : String.valueOf(month);
+    String dateString = dateNum < 10 ? "0" + dateNum : String.valueOf(dateNum);
+
+    String sheetName = monthString + dateString;
+    XSSFSheet sheet = workbook.getSheet(sheetName);
 
     boolean isDataWritten = false;
     for (Row row : sheet) {
+
       for (Cell cell : row) {
         if (cell.getCellTypeEnum().equals(CellType.STRING)
             && cell.getStringCellValue().equals("EPN Fed Credits Presented")) {
@@ -78,11 +88,11 @@ public class TxtMain {
 
     file.close();
 
-    Date date = new Date();
+    Date date1 = new Date();
     FileOutputStream outputStream =
         new FileOutputStream(
             "C:\\Users\\sarou\\Desktop\\ProgrammingPractice\\ProgrammingPractice\\src\\main\\resources\\testdata_update"
-                + date.getTime()
+                + date1.getTime()
                 + ".xlsx");
 
     workbook.write(outputStream);
